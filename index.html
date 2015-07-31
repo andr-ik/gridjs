@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+	<title></title>
+	<link href="stylesheets/style.css" type="text/css" rel="stylesheet"/>
+	<link href="stylesheets/animate.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="span12">
+				<h1>Grid.js</h1>
+				<p>JQuery плагин для динамической сетки</p>
+				<br/>
+				<br/>
+				<a href="" class="btn btn--bg">скачать с github</a>
+			</div>
+		</div>
+	</div>
+	<div class="body">
+		<div class="container">
+			<div class="span12">
+				<div id="grid">
+					<script>
+						var html = "";
+						for(i=0,j=33; i<j; i++){
+							var template = "<div class=\"span2 grid__element\">"+
+							"	<div class=\"grid__item\">"+
+							"		<img src=\"image/"+i+".jpg\" alt=\"\" title=\"\" class=\"grid__item__image\" width=\"200\" />"+
+							"		<div class=\"grid__item__info\">Картинка #"+i+"</div>"+
+							"	</div>"+
+							"</div>";
+							
+							html += template;
+						}
+						document.getElementById('grid').innerHTML = html;
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/grid.js"></script>
+	<script>
+	$(window).load(function(){
+		console.log('tetx');
+		$('#grid').grid({
+			columns: 6
+		});
+	});		
+	</script>
+</body>
+</html>

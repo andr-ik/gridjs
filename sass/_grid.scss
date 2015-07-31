@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+$max-columns: 12;
+
+$susy: (
+  columns: $max-columns,
+  gutters: 4/$max-columns,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+  debug: (
+    image: show,
+    color: rgba(255,0,0,0.6),
+    output: overlay,
+    toggle: bottom right,
+  )
+);
+
+$shorthand: 12 1/4 fluid float inside;
+
+@for $i from 1 through $max-columns {
+	.span#{$i} {
+		@include span($i of 12);
+		margin-top: gutter();
+		margin-bottom: gutter();
+	}
+}
+
+.span--no-margin {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.span--last{
+	@include omega;
+}

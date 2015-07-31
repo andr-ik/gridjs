@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.btn{
+	border-radius: 17px;
+	border: solid 1px $main-color;
+	color: $main-color;
+	margin: 4px 0;
+	padding: 8px 22px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	
+	&--bg{
+		background: radial-gradient( circle at 50% 50%, lighten($main-color, 5%), $main-color);
+		color: #fff;
+	}
+	
+	&:hover{
+		opacity: 0.8;
+	}
+}
